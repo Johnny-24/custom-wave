@@ -9,13 +9,13 @@ class Play extends Component {
 
   render() {
     return (
-      <button type="button" onClick={this.handleClick.bind(this)}>
+      <button type="button" onClick={this.handlePlay.bind(this)}>
         Play
       </button>
     );
   }
 
-  handleClick() {
+  handlePlay() {
     this.state.play ? this.props.audio.player.pause() : this.props.audio.player.play();
     this.setState(prevState => {
       return {

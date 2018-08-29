@@ -3,20 +3,18 @@ import React, { Component } from "react";
 import "./styles.sass";
 
 class Next extends Component {
-  state = {
-    
-  };
-
   render() {
     return (
-      <div className="next" onClick={this.next.bind(this)}>
+      <button type="button" className="next" onClick={this.next.bind(this)}>
         next
-      </div>
+      </button>
     );
   }
 
   next() {
-    alert('Next');
+    if (this.props.stations.length - 2 >= this.props.stationNumber) {
+      this.props.nextStation(this.props.stationNumber, true)
+    }
   }
 }
 

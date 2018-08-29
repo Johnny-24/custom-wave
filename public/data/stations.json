@@ -3,5 +3,10 @@
     "id": 1,
     "title": "trickster ElectronicBeats",
     "url": "http://stream.laut.fm/trickster"
+  },
+  {
+    "id": 2,
+    "title": "test",
+    "url": "http://stream.laut.fm/deutschrap"
   }
 ]

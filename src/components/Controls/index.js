@@ -7,16 +7,15 @@ import Prev from './../Prev';
 import './styles.sass';
 
 class Controls extends Component {
-  state = {
-    
-  };
-
   render() {
-    //http://stream.laut.fm/deutschrap
     return <div className="controls">
         <Prev />
-        <Play audio={this.props.player}/>
-        <Next />
+        <Play audio={this.props.player} />
+        <Next 
+          nextStation={this.props.changeNumber} 
+          stationNumber={this.props.stationNumber}
+          stations={this.props.stations}
+        />
       </div>;
   }
 }
