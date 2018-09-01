@@ -10,24 +10,37 @@ class App extends Component {
   state = {
     stationNumber: 0,
     player: null,
-    stations: null
+    stations: null,
+    play: false
   };
 
   render() {
-    return <div className="App">
-        <Header />
-        <Player 
-          getPlayer={this.getPlayer} 
-          stationNumber={this.state.stationNumber} 
-          stations={this.state.stations}
+    const { stations, stationNumber, play } = this.state;
+    return (
+      <div className="App">
+        <Header 
+          stations={stations}
+          stationNumber={stationNumber}
+          play={play}
+          changePlayStatus={this.changePlayStatus}
+          changeNumber={this.changeNumber}
+          player={this.state}
         />
-        <Controls 
-          player={this.state} 
-          changeNumber={this.changeNumber} 
-          stationNumber={this.state.stationNumber} 
-          stations={this.state.stations}
+        <Player
+          getPlayer={this.getPlayer}
+          stationNumber={stationNumber}
+          stations={stations}
         />
-      </div>;
+        <Controls
+          player={this.state}
+          changeNumber={this.changeNumber}
+          stationNumber={stationNumber}
+          stations={stations}
+          play={play}
+          changePlayStatus={this.changePlayStatus}
+        />
+      </div>
+    );
   }
 
   componentDidMount() {
@@ -40,17 +53,23 @@ class App extends Component {
       });
   }
 
-  getPlayer = (val) => {
-    this.setState({player: val});
+  changePlayStatus = () => {
+    this.setState({ play: !this.state.play })
   }
 
+  getPlayer = val => {
+    this.setState({ player: val });
+  };
+
   changeNumber = (number, fun) => {
-    fun ? this.setState({
-          stationNumber: number + 1
-        }) : this.setState({ 
-          stationNumber: number - 1 
-        });
-  }
+    if(fun === 'next') {
+      this.setState({ stationNumber: number + 1 }) 
+    } else if (fun === 'prev') {
+      this.setState({ stationNumber: number - 1 })
+    } else {
+      this.setState({ stationNumber: number})
+    }
+  };
 }
 
 export default App;

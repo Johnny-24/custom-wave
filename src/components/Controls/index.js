@@ -8,13 +8,35 @@ import './styles.sass';
 
 class Controls extends Component {
   render() {
+    const { 
+      stations, 
+      stationNumber, 
+      play, 
+      player, 
+      changeNumber, 
+      changePlayStatus 
+    } = this.props;
     return <div className="controls">
-        <Prev />
-        <Play audio={this.props.player} />
+        <Prev 
+          prevStation={changeNumber}
+          stationNumber={stationNumber}
+          stations={stations}
+          audio={player}
+          changePlayStatus={changePlayStatus}
+          play={play}
+        />
+        <Play 
+          audio={player} 
+          play={play}
+          changePlayStatus={changePlayStatus}
+          />
         <Next 
-          nextStation={this.props.changeNumber} 
-          stationNumber={this.props.stationNumber}
-          stations={this.props.stations}
+          nextStation={changeNumber} 
+          stationNumber={stationNumber}
+          stations={stations}
+          audio={player}
+          changePlayStatus={changePlayStatus}
+          play={play}
         />
       </div>;
   }

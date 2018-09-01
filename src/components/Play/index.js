@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import "./styles.sass";
 
 class Play extends Component {
-  state = {
-    play: false
-  };
-
   render() {
     return (
       <button type="button" onClick={this.handlePlay.bind(this)}>
@@ -16,12 +12,8 @@ class Play extends Component {
   }
 
   handlePlay() {
-    this.state.play ? this.props.audio.player.pause() : this.props.audio.player.play();
-    this.setState(prevState => {
-      return {
-        play: !prevState.play
-      };
-    });
+    this.props.changePlayStatus()
+    this.props.play ? this.props.audio.player.pause() : this.props.audio.player.play();
   }
 }
 

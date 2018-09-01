@@ -3,20 +3,23 @@ import React, { Component } from "react";
 import "./styles.sass";
 
 class Prev extends Component {
-  state = {
-
-  };
-
   render() {
     return (
-      <div className="next" onClick={this.prev.bind(this)}>
+      <button type="button" className="prev" onClick={this.prev}>
         prev
-      </div>
+      </button>
     );
   }
 
-  prev() {
-    alert('Prev');
+  prev = () => {
+    if (this.props.stationNumber > 0) {
+
+      if (this.props.play) {
+        this.props.audio.player.pause();
+        this.props.changePlayStatus();
+      }
+      this.props.prevStation(this.props.stationNumber, 'prev');
+    }
   }
 }
 
