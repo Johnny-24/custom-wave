@@ -3,11 +3,20 @@ import React, { Component } from "react";
 import "./styles.sass";
 
 class Next extends Component {
+
   render() {
     return (
-      <button type="button" className="next" onClick={this.next}>
-        next
-      </button>
+      <button
+        type="button"
+        className={
+          `next ${this.props.stations 
+          && this.props.stations.length 
+          && this.props.stations.length 
+          === this.props.stationNumber + 1 
+          && "inactive"}`
+        }
+        onClick={this.next}
+      />
     );
   }
 
@@ -18,8 +27,8 @@ class Next extends Component {
         this.props.changePlayStatus();
       }
       this.props.nextStation(this.props.stationNumber, "next");
-    }
-  }
+    } 
+  };
 }
 
 export default Next;

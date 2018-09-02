@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import RadioTitle from './../RadioTitle';
-import StationsList from './../StationsList';
+import Stations from "./../Stations";
+import Burger from "./../Burger";
 
 import './styles.sass';
 
@@ -16,12 +17,21 @@ class Header extends Component {
       changePlayStatus
     } = this.props;
     return <header className="header">
-      <StationsList 
+      <Burger 
         stations={stations}
         play={play}
         audio={player}
         changeNumber={changeNumber}
         changePlayStatus={changePlayStatus}
+        stationNumber={stationNumber}
+      />
+      <Stations 
+        stations={stations}
+        play={play}
+        audio={player}
+        changeNumber={changeNumber}
+        changePlayStatus={changePlayStatus}
+        stationNumber={stationNumber}
       />
       <RadioTitle 
         stations={stations}

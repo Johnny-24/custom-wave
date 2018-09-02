@@ -24,7 +24,7 @@ class App extends Component {
           play={play}
           changePlayStatus={this.changePlayStatus}
           changeNumber={this.changeNumber}
-          player={this.state}
+          player={this.state.player}
         />
         <Player
           getPlayer={this.getPlayer}
@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/stations.json")
+    fetch("http://johnny123.16mb.com/data/stations.json")
       .then(response => {
         return response.json();
       })

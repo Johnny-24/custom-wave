@@ -4,11 +4,7 @@ import "./styles.sass";
 
 class Prev extends Component {
   render() {
-    return (
-      <button type="button" className="prev" onClick={this.prev}>
-        prev
-      </button>
-    );
+    return <button type="button" className={`prev ${this.props.stationNumber === 0 && "inactive"}`} onClick={this.prev} />;
   }
 
   prev = () => {
