@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Scrollbars } from "react-custom-scrollbars";
 import './styles.sass';
 
 class StationsList extends Component {
@@ -21,12 +22,11 @@ class StationsList extends Component {
           </li>
         )
       );
-    return <div className={`stations-list ${
-      active && 'active'}`} >
-      <ul>
-        {stations}
-      </ul>
-    </div>;
+    return <Scrollbars className={`stations-list ${active && "active"}`}>
+        <ul>
+          {stations}
+        </ul>
+    </Scrollbars>;
   }
 
   handleStation(id)  {
