@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Player extends Component {
   render() {
     return <React.Fragment>
-        <audio id="audio" src={this.props.stations && this.props.stations[this.props.stationNumber].url} ref={audioTag => {
+        <audio id="audio" preload="auto" src={this.props.stations && this.props.stations[this.props.stationNumber].url} ref={audioTag => {
             this.audio = audioTag;
           }} 
         />

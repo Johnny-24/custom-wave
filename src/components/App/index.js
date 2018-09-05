@@ -44,7 +44,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://johnny123.16mb.com/data/stations.json")
+    // fetch("http://johnny123.16mb.com/data/stations.json")
+    fetch("http://localhost:3000/data/stations.json")
       .then(response => {
         return response.json();
       })

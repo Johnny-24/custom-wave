@@ -4,7 +4,9 @@ import "./styles.sass";
 
 class Play extends Component {
   render() {
-    return <button type="button" className={`play ${this.props.play && 'active'}`} onClick={this.handlePlay.bind(this)} />;
+    return <div>
+    <button type="button" className={`play ${this.props.play && 'active'}`} onClick={this.handlePlay.bind(this)} />
+    </div>
   }
 
   handlePlay() {
