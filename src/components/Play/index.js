@@ -1,18 +1,36 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import "./styles.sass";
+import { handleStatusPlayer } from './../../actions/handleStatusPlayer'
+
+import './styles.sass'
 
 class Play extends Component {
   render() {
-    return <div>
-    <button type="button" className={`play ${this.props.play && 'active'}`} onClick={this.handlePlay.bind(this)} />
-    </div>
+    return (
+      <React.Fragment>
+        <button type="button" className={`play`} onClick={this.handlePlay}>
+          <i className="play__ico" />
+        </button>
+      </React.Fragment>
+    )
   }
 
-  handlePlay() {
-    this.props.changePlayStatus()
-    this.props.play ? this.props.audio.player.pause() : this.props.audio.player.play();
+  handlePlay = () => {
+    const { audio, handleStatusPlayer } = this.props
+    if (!audio.status) {
+      //audio.player.play()
+      handleStatusPlayer(true)
+    } else {
+      //audio.player.pause()
+      handleStatusPlayer(false)
+    }
   }
 }
 
-export default Play;
+export default connect(
+  state => ({
+    audio: state.player,
+  }),
+  { handleStatusPlayer }
+)(Play)
