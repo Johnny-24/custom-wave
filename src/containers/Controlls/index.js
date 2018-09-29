@@ -10,7 +10,9 @@ class Controls extends Component {
   render() {
     return (
       <div className={classnames(styles.root)}>
+        <ControllsBtn modClass={'prev'} />
         <ControllsBtn modClass={'play'} />
+        <ControllsBtn modClass={'next'} />
       </div>
     )
   }

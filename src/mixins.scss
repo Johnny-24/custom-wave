@@ -1,0 +1,14 @@
+@mixin triangle($top, $right, $bottom, $left) {
+  border-top: $top solid transparent;
+  border-right: $right solid transparent;
+  border-bottom: $bottom solid transparent;
+  border-left: $left solid transparent;
+  @content;
+}
+
+@mixin position($top, $left, $ttop, $tleft) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($tleft, $ttop);
+}

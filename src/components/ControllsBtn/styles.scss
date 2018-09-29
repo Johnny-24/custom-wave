@@ -1,15 +1,42 @@
+@import './../../mixins.scss';
+@import './../../colors.scss';
+
+// Animation
+@keyframes neonBtb {
+  0% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+  50% {
+    box-shadow: 0 0 30px $light-blue;
+  }
+  100% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+}
+
+// Template
+%line {
+  width: 5px;
+  background: $light-blue;
+  height: 60px;
+  z-index: 1;
+  @media screen and (max-width: 600px) {
+    height: 40px;
+  }
+}
+
+// Styles
 .root {
   border: none;
   border-radius: 50%;
   width: 120px;
   height: 120px;
   background: none;
-  box-shadow: 0 0 20px #03A9F4;
+  box-shadow: 0 0 20px $light-blue;
   position: relative;
   cursor: pointer;
-  transition: all .1s;
   outline: none;
-  background: #292929;
+  background: $gray;
   &:hover {
     animation: neonBtb .3s ease-in-out;
   }
@@ -19,39 +46,77 @@
   width: 200px;
   height: 200px;
   margin: 0 20px;
+  @media screen and (max-width: 600px) {
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+  }
   &::before {
     content: '';
-    position: absolute;
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 90px solid #03a9f49c;
-    left: 65px;
-    top: 50%;
-    transform: translateY(-50%);
+    @include triangle(50px, 0, 50px, 90px) {
+      border-left-color: $light-blue;
+    };
+    @include position(50%, 65px, -50%, 0);
     @media screen and (max-width: 600px) {
-      border-top: 30px solid transparent;
-      border-bottom: 30px solid transparent;
-      border-left: 60px solid #03a9f49c;
-      left: 37px;
+      @include triangle(30px, 0, 30px, 60px) {
+        border-left-color: $light-blue;        
+      };
+      @include position(50%, 28px, -50%, 0);
     }
-  }
-  @media screen and (max-width: 600px) {
-    width: 120px;
-    height: 120px;
-    margin: 0 15px;
   }
 }
 
+.prev {
+  @media screen and (max-width: 600px) {
+    width: 75px;
+    height: 75px;
+  }
+  &::after {
+    content: '';
+    @include triangle(30px, 60px, 30px, 0) {
+      border-right-color: $light-blue;
+    };
+    @include position(50%, 50%, -50%, -50%);
 
-// Animation
-@keyframes neonBtb {
-  0% {
-    box-shadow: 0 0 20px #03A9F4;
+    @media screen and (max-width: 600px) {
+      @include triangle(20px, 40px, 20px, 0) {
+        border-right-color: $light-blue;
+      };
+    }
   }
-  50% {
-    box-shadow: 0 0 30px #03A9F4;
+  &::before {
+    content: '';
+    @extend %line;
+    @include position(50%, 30px, -50%, 0);
+    @media screen and (max-width: 600px) {
+      @include position(50%, 17px, -50%, 0);
+    }
   }
-  100% {
-    box-shadow: 0 0 20px #03A9F4;
+}
+
+.next {
+  @media screen and (max-width: 600px) {
+    width: 75px;
+    height: 75px;
+  }
+  &::after {
+    content: '';
+    @extend %line;
+    @include position(50%, 85px, -50%, 0);
+    @media screen and (max-width: 600px) {
+      @include position(50%, 53px, -50%, 0);
+    }
+  }
+  &::before {
+    content: '';
+    @include triangle(30px, 0, 30px, 60px) {
+      border-left-color: $light-blue;
+    };
+    @include position(50%, 50%, -50%, -50%);
+    @media screen and (max-width: 600px) {
+      @include triangle(20px, 0, 20px, 40px) {
+        border-left-color: $light-blue;
+      };
+    }
   }
 }
