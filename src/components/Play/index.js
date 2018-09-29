@@ -9,7 +9,7 @@ class Play extends Component {
   render() {
     return (
       <React.Fragment>
-        <button type="button" className={`play`} onClick={this.handlePlay}>
+        <button type="button" className="play" onClick={this.handlePlay}>
           <i className="play__ico" />
         </button>
       </React.Fragment>
@@ -17,13 +17,16 @@ class Play extends Component {
   }
 
   handlePlay = () => {
-    const { audio, handleStatusPlayer } = this.props
-    if (!audio.status) {
-      //audio.player.play()
-      handleStatusPlayer(true)
+    const { audio } = this.props
+
+    if (!this.state.PlayerStatus) {
+      audio.player.play()
+      this.setState({ PlayerStatus: true })
+      //handleStatusPlayer(true)
     } else {
-      //audio.player.pause()
-      handleStatusPlayer(false)
+      audio.player.pause()
+      this.setState({ PlayerStatus: false })
+      //handleStatusPlayer(false)
     }
   }
 }
