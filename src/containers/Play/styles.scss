@@ -1,0 +1,78 @@
+@import './../../mixins.scss';
+@import './../../colors.scss';
+
+// Animation
+@keyframes neonBtb {
+  0% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+  50% {
+    box-shadow: 0 0 30px $light-blue;
+  }
+  100% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+}
+
+.root {
+  border: none;
+  border-radius: 50%;
+  background: none;
+  box-shadow: 0 0 20px $light-blue;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  background: $gray;
+  width: 200px;
+  height: 200px;
+  margin: 0 20px;
+  @media screen and (max-width: 600px) {
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+  }
+  &:hover {
+    animation: neonBtb .3s ease-in-out;
+  }
+  &::before {
+    content: '';
+    @include triangle(50px, 0, 50px, 90px) {
+      border-left-color: $light-blue;
+    };
+    @include position(50%, 65px, -50%, 0);
+    @media screen and (max-width: 600px) {
+      @include triangle(30px, 0, 30px, 60px) {
+        border-left-color: $light-blue;        
+      };
+      @include position(50%, 28px, -50%, 0);
+    }
+  }
+}
+
+.isActive {
+  &::before {
+    border: none;
+    width: 15px;
+    height: 90px;
+    background: $light-blue;
+    @include position(50%, 72px, -50%, 0);
+    @media screen and (max-width: 600px) {
+      height: 40px;
+      width: 5px;
+    @include position(50%, 40px, -50%, 0);
+    }
+  }
+  &::after {
+    content: '';
+    @include position(50%, 112px, -50%, 0);
+    border: none;
+    width: 15px;
+    height: 90px;
+    background: $light-blue;
+    @media screen and (max-width: 600px) {
+      height: 40px;
+      width: 5px;
+    @include position(50%, 55px, -50%, 0);
+    }
+  }
+}

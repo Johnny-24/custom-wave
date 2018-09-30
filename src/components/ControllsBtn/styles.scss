@@ -42,30 +42,6 @@
   }
 }
 
-.play {
-  width: 200px;
-  height: 200px;
-  margin: 0 20px;
-  @media screen and (max-width: 600px) {
-    width: 100px;
-    height: 100px;
-    margin: 0 15px;
-  }
-  &::before {
-    content: '';
-    @include triangle(50px, 0, 50px, 90px) {
-      border-left-color: $light-blue;
-    };
-    @include position(50%, 65px, -50%, 0);
-    @media screen and (max-width: 600px) {
-      @include triangle(30px, 0, 30px, 60px) {
-        border-left-color: $light-blue;        
-      };
-      @include position(50%, 28px, -50%, 0);
-    }
-  }
-}
-
 .prev {
   @media screen and (max-width: 600px) {
     width: 75px;
