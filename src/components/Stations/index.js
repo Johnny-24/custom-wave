@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import StationsList from "./../StationsList";
+import StationsList from './../StationsList'
 
-import './styles.sass'
+import styles from './styles.scss'
 
 class Stations extends Component {
   render() {
@@ -12,10 +12,10 @@ class Stations extends Component {
       audio,
       changeNumber,
       changePlayStatus,
-      stationNumber
-    } = this.props;
+      stationNumber,
+    } = this.props
     return (
-      <div className="stations">
+      <div className={styles.root}>
         Stations List
         <StationsList
           stations={stations}
@@ -26,8 +26,8 @@ class Stations extends Component {
           stationNumber={stationNumber}
         />
       </div>
-    );
+    )
   }
 }
 
-export default Stations;
+export default Stations

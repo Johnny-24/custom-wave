@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 
+// Components
 import App from './containers/App'
 
-import './index.scss'
+// Styles
+import './styles/index.scss'
 
 import registerServiceWorker from './registerServiceWorker'
 

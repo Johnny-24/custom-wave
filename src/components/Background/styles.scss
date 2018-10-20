@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 300px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bgTop, .bgBottom {
+  width: 100%;
+  height: 50vh;
+}
+
+.bgTop {
+  background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 100%  , #484847, #090909);
+  background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+  box-shadow: inset 0 -50px 200px rgba(0,0,0,.5); 
+}
+
+.bgBottom {
+  background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0%  , #484847, #090909);
+  background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+  height: 100vh;
+  transform-origin: top;
+  transform: rotateX(45deg);
+  box-shadow: inset 0 50px 200px rgba(0,0,0,.5); 
+}

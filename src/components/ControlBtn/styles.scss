@@ -1,0 +1,88 @@
+@import './../../styles/colors.scss';
+@import './../../styles//media.scss';
+
+// Animation
+@keyframes neonBtb {
+  0% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+  50% {
+    box-shadow: 0 0 30px $light-blue;
+  }
+  100% {
+    box-shadow: 0 0 20px $light-blue;
+  }
+}
+
+.root {
+  border: none;
+  border-radius: 50%;
+  background: none;
+  box-shadow: 0 0 20px $light-blue;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  background: $gray;
+  width: 200px;
+  height: 200px;
+  margin: 0 20px;
+  @include sm {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+  }
+  &:hover {
+    animation: neonBtb .3s ease-in-out;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.2);
+    height: 100%;
+    transform: scaleY(.3);
+    border-radius: 50%;
+    filter: blur(15px);
+  }
+}
+
+.ico {
+  width: 150px;
+  height: 150px;
+  font-size: 150px;
+  color: $light-blue;
+  @include sm {
+    width: 75px;
+    height: 75px;
+    font-size: 75px;
+  }
+}
+
+.small {
+  width: 130px;
+  height: 130px;
+  @include sm {
+    width: 70px;
+    height: 70px;
+  }
+  .ico {
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+    @include sm {
+      width: 50px;
+      height: 50px;
+      font-size: 50px;
+    }
+  }
+}
+
+.inActive {
+  opacity: .4;
+  cursor: default;
+  &:hover {
+    animation: none;
+  }
+}

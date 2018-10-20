@@ -4,17 +4,16 @@ import { getPlayer } from './../../actions/getPlayer'
 
 class Player extends Component {
   render() {
+    const { stations, counter } = this.props
     return (
-      <React.Fragment>
-        <audio
-          id="audio"
-          preload="auto"
-          src={'http://stream.laut.fm/deutschrap'}
-          ref={audioTag => {
-            this.player = audioTag
-          }}
-        />
-      </React.Fragment>
+      <audio
+        id="audio"
+        preload="auto"
+        src={stations[0] && stations[counter].url}
+        ref={audioTag => {
+          this.player = audioTag
+        }}
+      />
     )
   }
 
@@ -25,6 +24,9 @@ class Player extends Component {
 }
 
 export default connect(
-  null,
+  state => ({
+    counter: state.counter,
+    stations: state.station,
+  }),
   { getPlayer }
 )(Player)

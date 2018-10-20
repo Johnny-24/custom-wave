@@ -1,0 +1,23 @@
+@import './../../colors.scss';
+
+.root {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  box-shadow: 0 0 10px $light-blue; 
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: $gray;
+  box-sizing: border-box;
+  @media screen and (max-width: 600px) {
+    height: 40px;
+    padding: 0 15px;
+  }
+}
+
+// TODO
+// Упорядочить стили + медиа
