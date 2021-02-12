@@ -1,0 +1,26 @@
+.burger {
+	width: 35px;
+	height: 20px;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.burger::before,
+.burger::after {
+	content: '';
+	height: 2px;
+	width: 100%;
+	background: #fff;
+}
+
+.burger__line {
+	height: 2px;
+	width: 100%;
+	background: #fff;
+}
