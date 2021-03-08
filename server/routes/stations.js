@@ -1,5 +1,5 @@
 const { Router } = require('express')
-
+const Stations = require('./../models/stations')
 
 const router = Router()
 
