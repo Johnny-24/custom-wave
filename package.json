@@ -1,45 +1,48 @@
 {
-  "name": "my_radio",
-  "version": "0.1.0",
+  "name": "radio",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Quasar App",
+  "author": "johnny-24 <dos_24@inbox.ru>",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router-dom": "^5.1.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "test": "echo \"No test specified\" && exit 0"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "@vue/composition-api": "^1.0.0-rc.3",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "quasar": "^1.0.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@quasar/app": "^2.0.0",
+    "@types/node": "^10.17.15",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^7.7.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }
