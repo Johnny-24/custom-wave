@@ -21,6 +21,7 @@
 }
 .station__title {
   color: #fff;
+  user-select: after;
 }
 </style>
 
