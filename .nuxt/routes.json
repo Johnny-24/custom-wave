@@ -1,0 +1,23 @@
+[
+  {
+    "name": "signin",
+    "path": "/signin",
+    "component": "/Users/evgenijkudravcev/work/radio/pages/signin.vue",
+    "chunkName": "pages/signin",
+    "_name": "_ecca1962"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/Users/evgenijkudravcev/work/radio/pages/signup.vue",
+    "chunkName": "pages/signup",
+    "_name": "_c39d6c76"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/evgenijkudravcev/work/radio/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6a8899b5"
+  }
+]
